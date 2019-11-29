@@ -1,20 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-insure_list = [{'brain': True,
-  'breast': True,
-  'colorectal': True,
-  'des': '보험 상품 한줄설명',
-  'genital': True,
-  'heart': True,
-  'img': '',
-  'liver': True,
-  'lung': True,
-  'name': '회사명',
-  'product': '상품명',
-  'stomach': True,
-  'thyroid': True,
-  'urinary': True,
-  'url': 'URL'},
+insure_list = [
  {'brain': False,
   'breast': True,
   'colorectal': False,
