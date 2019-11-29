@@ -26,34 +26,38 @@ TRANSLATE = {
 def index():
     recommend = insure_list[:]
     random.shuffle(recommend)
+    answer = typeform.get_response()[0]
+    print(answer)
+    data = typeform.answer_to_obj(answer)
+    print(data)
     context = {
-        'age': 20,
-        'gender': '남성',
+        'age': '25 ~ 29',
         'score': {
-            'brain': 40,
-            'breast': 30,
+            'brain': 15,
+            'breast': 6,
             'colorectal': 20,
             'genital': 10,
-            'heart': 86,
-            'liver': 30,
-            'lung': 20,
-            'stomach': 69,
-            'thyroid': 85,
+            'heart': 36,
+            'liver': 55,
+            'lung': 4,
+            'stomach': 10,
+            'thyroid': 30,
             'urinary': 20
         },
         'avr_score': {
-            'brain': 40,
-            'breast': 30,
-            'colorectal': 20,
+            'brain': 11,
+            'breast': 2,
+            'colorectal': 23,
             'genital': 10,
-            'heart': 86,
-            'liver': 30,
-            'lung': 20,
-            'stomach': 69,
-            'thyroid': 85,
-            'urinary': 20
+            'heart': 15,
+            'liver': 45,
+            'lung': 30,
+            'stomach': 30,
+            'thyroid': 20,
+            'urinary': 50
         },
         'recommend': recommend[:5],
+        'data': data,
         'TRANSLATE': TRANSLATE
     }
     return render_template('index.html', **context)
