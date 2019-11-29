@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 insure_list = [{'brain': True,
   'breast': True,
   'colorectal': True,

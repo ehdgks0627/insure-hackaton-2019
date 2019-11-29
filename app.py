@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 from flask import Flask, render_template, send_from_directory
 from typeform import TypeForm
 from insure_list import insure_list
