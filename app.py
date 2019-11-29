@@ -27,9 +27,7 @@ def index():
     recommend = insure_list[:]
     random.shuffle(recommend)
     answer = typeform.get_response()[0]
-    print(answer)
     data = typeform.answer_to_obj(answer)
-    print(data)
     context = {
         'age': '25 ~ 29',
         'score': {

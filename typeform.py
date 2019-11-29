@@ -10,7 +10,6 @@ class TypeForm:
     def __init__(self):
         self.session = requests.session()
         self.session.headers['Authorization'] = 'Bearer ' + self.TOKEN
-        pprint(self.get_form_info())
 
     def answer_to_obj(self, answer):
         data = {
@@ -36,6 +35,7 @@ class TypeForm:
             'completed': ''
         }
         r = self.session.get(url, params=params).json()
+    irint(data)
         return list(filter(lambda x: x['answers'], r['items']))
 
     def get_property(self, answer, name):
