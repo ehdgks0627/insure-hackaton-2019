@@ -101,11 +101,11 @@
                         "theme": "fusion",
                     },
                     "data": [{
-                        "label": "Venezuela",
-                        "value": "290"
+                        "label": "점수",
+                        "value": "{{ score[keyword] }}"
                     }, {
                         "label": "",
-                        "value": "260"
+                      "value": 100 - {{ score[keyword] }}
                     }]
                 }
             }).render();

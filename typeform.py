@@ -35,7 +35,6 @@ class TypeForm:
             'completed': ''
         }
         r = self.session.get(url, params=params).json()
-    irint(data)
         return list(filter(lambda x: x['answers'], r['items']))
 
     def get_property(self, answer, name):
