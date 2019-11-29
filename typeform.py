@@ -15,7 +15,6 @@ class TypeForm:
     def get_form_info(self):
         url = self.API_BASE + '/forms/{form_id}'.format(form_id=self.FORM_ID)
         r = self.session.get(url).json()
-        pprint(r)
 
     def get_response(self):
         url = self.API_BASE + '/forms/{form_id}/responses'.format(form_id=self.FORM_ID)
@@ -24,4 +23,3 @@ class TypeForm:
             'completed': ''
         }
         r = self.session.get(url, params=params).json()
-        # pprint(r)
