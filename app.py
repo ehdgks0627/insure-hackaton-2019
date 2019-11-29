@@ -1,5 +1,6 @@
 from flask import Flask, render_template, send_from_directory
 from typeform import TypeForm
+from insure_list import insure_list
 
 app = Flask(__name__, static_url_path='/static/', static_folder='templates/static')
 typeform = TypeForm()
@@ -46,6 +47,7 @@ def index():
             'thyroid': 85,
             'urinary': 20
         },
+        'recommand': [],
         'TRANSLATE': TRANSLATE
     }
     return render_template('index.html', **context)
