@@ -123,13 +123,16 @@
       <button
         class="navbar-toggler p-0 border-0"
         type="button"
-        data-toggle="offcanvas">
+        data-toggle="offcanvas"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
     </nav>
 
     <main role="main" class="container">
-      <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
+      <div
+        class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow"
+      >
         <img
           class="mr-3"
           src="static/svg/bootstrap-outline.svg"
@@ -149,57 +152,51 @@
           <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-8">
               <div class="row">
-                <div class="col-sm-6 col-md-4">
-                  <img
-                    src="http://placehold.it/180x180"
-                    alt=""
-                    class="img-rounded img-responsive"
-                  />
-                </div>
-                <div class="col-sm-6 col-md-1"></div>
-                <div class="col-sm-6 col-md-7">
-                  <h4>
-                    매직 존슨
-                  </h4>
+                <div class="col-sm-8 col-md-8">
                   <div class="row">
-                    <div class="col-md-6">
-                      <label>생년월일</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{ data['birth'] }}</p>
-                    </div>
+                    <div class="col-md-6"><label>생년월일</label></div>
+                    <div class="col-md-6"><p>{{ data['birth'] }}</p></div>
                   </div>
                   <div class="row">
                     <div class="col-md-6">
                       <label>성별 / 키 / 몸무게</label>
                     </div>
                     <div class="col-md-6">
-                      <p>{{ data['gender'] }} / {{ data['height'] }}cm / {{ data['weight'] }}kg</p>
+                      <p>
+                        {{ data['gender'] }} / {{ data['height'] }}cm / {{
+                        data['weight'] }}kg
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6"><label>흡연여부 / 빈도</label></div>
+                    <div class="col-md-6"><p>유 / 10개비 이하</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>음주여부 / 빈도 / 양 /</label>
+                    </div>
+                    <div class="col-md-6"><p>유 / 주 2회 / 1명</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6"><label>운동강도 및 빈도</label></div>
+                    <div class="col-md-6">
+                      <p>
+                        {{ data['exercise_time'] }} / 주 {{ data['exercise'] }}
+                      </p>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <label>흡연여부 및 빈도</label>
+                      <label>질병진단 여부 / 질병명</label>
                     </div>
-                    <div class="col-md-6">
-                      <p>유 / 하루 1갑</p>
-                    </div>
+                    <div class="col-md-6"><p>None</p></div>
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <label>운동강도 및 빈도</label>
+                      <label>가족 질병 여부 / 질병명</label>
                     </div>
-                    <div class="col-md-6">
-                      <p>{{ data['exercise_time'] }} / 주 {{ data['exercise'] }}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>가족 질병</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{ data['family'] }}</p>
-                    </div>
+                    <div class="col-md-6"><p>{{ data['family'] }}</p></div>
                   </div>
                 </div>
               </div>
@@ -230,18 +227,29 @@
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h6 class="border-bottom border-gray pb-2 mb-0">추천 보험 상품 목록</h6>
         {% for insure in recommend %}
-          <div class="media text-muted pt-3">
-            <img src="/static/img/{{ insure['img'] }}" alt="" class="mr-2 rounded" style="max-width: 32px; max-height: 32px;">
-            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-              <div class="d-flex justify-content-between align-items-center w-100">
-                <strong class="text-gray-dark">({{ insure['name'] }}) {{ insure['product'] }}</strong>
-                <a href="{{ insure['url'] }}">자세히</a>
-              </div>
-              <span class="d-block">{{ insure['des'] }}</span>
+        <div class="media text-muted pt-3">
+          <img
+            src="/static/img/{{ insure['img'] }}"
+            alt=""
+            class="mr-2 rounded"
+            style="max-width: 32px; max-height: 32px;"
+          />
+          <div
+            class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray"
+          >
+            <div
+              class="d-flex justify-content-between align-items-center w-100"
+            >
+              <strong class="text-gray-dark"
+                >({{ insure['name'] }}) {{ insure['product'] }}</strong
+              >
+              <a href="{{ insure['url'] }}">자세히</a>
             </div>
+            <span class="d-block">{{ insure['des'] }}</span>
           </div>
-           {% endfor %}
-         </div>
+        </div>
+        {% endfor %}
+      </div>
     </main>
 
     <!-- Bootstrap core JavaScript
@@ -262,3 +270,4 @@
     <script src="static/js/offcanvas.js"></script>
   </body>
 </html>
+
